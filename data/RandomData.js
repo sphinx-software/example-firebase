@@ -14,8 +14,18 @@ class RandomData {
       date : date,
       timestamp: start + delta,
       value: {
-        country : ['JP', 'US', 'CH'][Math.round(Math.random() * 100) % 2],
-        value : Math.floor(Math.random() * 10)
+        country: ["JP","CN","EN"][ parseInt(Math.random() * 3)],
+        category : ["A","B"][ parseInt(Math.random() * 2) ],
+        os_flow : parseInt(Math.random() * 6000),
+        ow_flow : parseInt(Math.random() * 3000),
+        pv : parseInt(Math.random() * 2000),
+        ss : parseInt(Math.random() * 2000),
+        uu : parseInt(Math.random() * 2000),
+        value : Math.floor(Math.random() * 10),
+        node_id : "00000" + parseInt(Date.now()/100).toString().substr(-4),
+        created: Date.now(),
+        latitude: RandomData.getRandomInt(90, -90),
+        longitude: RandomData.getRandomInt(180, -180),
       }
     }
   }
